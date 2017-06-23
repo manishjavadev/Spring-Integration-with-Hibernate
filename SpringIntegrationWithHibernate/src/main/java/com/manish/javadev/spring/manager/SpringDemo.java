@@ -8,6 +8,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.manish.javadev.spring.model.Person;
 import com.manish.javadev.spring.service.PersonService;
 
+/**
+ * @author Manish
+ * 
+ */
 public class SpringDemo {
 	public static void main(String[] args) {
 
@@ -20,7 +24,7 @@ public class SpringDemo {
 				.getBean("personService");
 
 		Person person = new Person("Manish", "India");
-		/*personService.addPerson(person);
+		personService.addPerson(person);
 
 		person = new Person("Deepak", "India");
 		personService.addPerson(person);
@@ -29,13 +33,13 @@ public class SpringDemo {
 		personService.addPerson(person);
 
 		person = new Person("Shubham", "India");
-		personService.addPerson(person);*/
+		personService.addPerson(person);
 
-		// "Here Load Person";
+		// "Here Load Person" AND Update Person";
 		Person person1 = personService.getPersonById(2);
 		System.out.println(person1);
 
-		// "Here Update Person";
+		person1.setCountry("USA");
 		personService.updatePerson(person1);
 		System.out.println(person1);
 

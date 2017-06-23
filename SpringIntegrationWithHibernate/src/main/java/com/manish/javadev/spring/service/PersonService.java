@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.manish.javadev.spring.model.Person;
 
+/**
+ * @author Manish
+ * 
+ */
 public interface PersonService {
 
 	public void addPerson(Person person);
