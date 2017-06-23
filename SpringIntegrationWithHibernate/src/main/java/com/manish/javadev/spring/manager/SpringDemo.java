@@ -1,5 +1,7 @@
 package com.manish.javadev.spring.manager;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +20,34 @@ public class SpringDemo {
 				.getBean("personService");
 
 		Person person = new Person("Manish", "India");
+		/*personService.addPerson(person);
+
+		person = new Person("Deepak", "India");
 		personService.addPerson(person);
 
+		person = new Person("Meher", "India");
+		personService.addPerson(person);
+
+		person = new Person("Shubham", "India");
+		personService.addPerson(person);*/
+
+		// "Here Load Person";
+		Person person1 = personService.getPersonById(2);
+		System.out.println(person1);
+
+		// "Here Update Person";
+		personService.updatePerson(person1);
+		System.out.println(person1);
+
+		// "Here Get  All Person";
+		List<Person> personList = personService.listPersons();
+		for (Person pers : personList) {
+			System.out.println(pers);
+		}
+
+		// "Here Remove Person By ID";
+		personService.removePerson(1);
+
+		System.out.println("Done");
 	}
 }
